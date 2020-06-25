@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Exposhoot</string>
+    <string name="logo">logo</string>
+    <string name="next">Next</string>
+
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+</resources>
