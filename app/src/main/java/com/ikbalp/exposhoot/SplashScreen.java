@@ -8,6 +8,13 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/*
+     Kamis, 25 Juni 2020
+     Ikbal Padilah
+     10117143 - IF4
+*/
+
+
 public class SplashScreen extends AppCompatActivity {
     private int waktu_loading=2500;
 

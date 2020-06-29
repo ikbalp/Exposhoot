@@ -12,6 +12,14 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
+/*
+     Kamis, 25 Juni 2020
+     Ikbal Padilah
+     10117143 - IF4
+*/
+
+
+
 public class IntroViewPagerAdapter extends PagerAdapter {
 
   Context mContext ;

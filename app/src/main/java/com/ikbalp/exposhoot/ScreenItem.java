@@ -1,5 +1,12 @@
 package com.ikbalp.exposhoot;
 
+/*
+     Kamis, 25 Juni 2020
+     Ikbal Padilah
+     10117143 - IF4
+*/
+
+
 public class ScreenItem {
 
     String Title,Description;
