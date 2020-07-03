@@ -2,11 +2,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:color="@color/black"
+        android:color="@color/abumuda"
         android:state_checked="true"/>
 
     <item
-        android:color="@color/white"
+        android:color="@color/black"
         android:state_checked="false"/>
 
 </selector>
