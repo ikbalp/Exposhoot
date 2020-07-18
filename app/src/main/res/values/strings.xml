@@ -9,4 +9,15 @@
     <string name="camera">Camera</string>
     <string name="tips">Tips</string>
     <string name="search">Search</string>
+    <string name="my_name">My Name</string>
+    <string name="post_title">POST_TITLE</string>
+    <string name="post_desc">POST_DESC</string>
+    <string name="about">About</string>
+    <string name="hargaa">Rp XX.XXX</string>
+    <string name="tipenya">Camera Tipe X</string>
+    <string name="deskripsi">DESKRIPSI</string>
+    <string name="about_exposhoot_versi">Exposhoot Version 1.0</string>
+    <string name="about_by_ikbal">by Ikbal Padilah</string>
+    <string name="exposhoot">Exposhoot</string>
+    <string name="google">All content contained in this application is created with search results from Google. If you want to find out more, please contact me via email ikballp01@gmail.com</string>
 </resources>

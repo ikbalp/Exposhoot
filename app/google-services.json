@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "348700469475",
+    "firebase_url": "https://exposhootapp.firebaseio.com",
+    "project_id": "exposhootapp",
+    "storage_bucket": "exposhootapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348700469475:android:507104cdfb5709c8a9fdd6",
+        "android_client_info": {
+          "package_name": "com.ikbalp.exposhoot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348700469475-u69qffdrqhm5sk0c2notop2834i064bb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ikbalp.exposhoot",
+            "certificate_hash": "2de058532e9f9df0451f70412b496ac7ca2f263b"
+          }
+        },
+        {
+          "client_id": "348700469475-pqrnbkpf60b39nii08tgf76v7uqn1o05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh1L9wp-Y9ZgHeWC99YABBJS6O0F31iiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348700469475-pqrnbkpf60b39nii08tgf76v7uqn1o05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

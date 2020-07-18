@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About">
+
+    <ImageView
+        android:layout_marginTop="200dp"
+        android:id="@+id/about_logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/expos"
+        android:layout_centerHorizontal="true">
+    </ImageView>
+    <TextView
+
+        android:layout_below="@+id/about_logo"
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/about_exposhoot_versi"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="13dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:layout_below="@+id/about"
+        android:id="@+id/byik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/about_by_ikbal"
+        android:textColor="@color/black"
+        android:textSize="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:layout_below="@+id/byik"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/google"
+        android:textColor="@color/black"
+        android:textSize="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/color_state"
+        app:itemTextColor="@drawable/color_state"
+        app:menu="@menu/menu_bottom_nav" />
+
+</RelativeLayout>

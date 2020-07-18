@@ -1,8 +1,10 @@
 package com.ikbalp.exposhoot;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,52 +13,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
-/*
-     Kamis, 25 Juni 2020
-     Ikbal Padilah
-     10117143 - IF4
-*/
-
-
-public class MainActivity extends AppCompatActivity {
-
+public class Tips extends AppCompatActivity {
 
     //widgets
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
-    FirebaseRecyclerOptions<DataCamera> options;
-    FirebaseRecyclerAdapter<DataCamera,DataCameraViewHolder> adapter;
-
+    FirebaseRecyclerOptions<DataTips> options;
+    FirebaseRecyclerAdapter<DataTips,DataTipsViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tipss);
 
         //Init and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.tips);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -64,20 +46,20 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.camera:
-                        startActivity(new Intent(getApplicationContext(), Camera.class));
+                        startActivity(new Intent(getApplicationContext(),Camera.class));
                         overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.tips:
-                        startActivity(new Intent(getApplicationContext(), Tips.class));
-                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.about:
-                        startActivity(new Intent(getApplicationContext(), About.class));
+                        startActivity(new Intent(getApplicationContext(),About.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -86,17 +68,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerViewtips);
         recyclerView.setHasFixedSize(true);
 
-        databaseReference =FirebaseDatabase.getInstance().getReference().child("Camera");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Tips");
 
-        options = new FirebaseRecyclerOptions.Builder<DataCamera>().setQuery(databaseReference, DataCamera.class).build();
+        options = new FirebaseRecyclerOptions.Builder<DataTips>().setQuery(databaseReference, DataTips.class).build();
 
-        adapter = new FirebaseRecyclerAdapter<DataCamera, DataCameraViewHolder>(options) {
+        adapter = new FirebaseRecyclerAdapter<DataTips, DataTipsViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(DataCameraViewHolder holder, final int position, DataCamera model) {
-                Picasso.get().load(model.getImg()).into(holder.i1, new Callback() {
+            protected void onBindViewHolder(DataTipsViewHolder holder, final int position, DataTips model) {
+                Picasso.get().load(model.getImage()).into(holder.i1, new Callback() {
                     @Override
                     public void onSuccess() {
 
@@ -107,16 +89,17 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
 
                     }
+
                 });
 
-                holder.t1.setText(model.getType());
-                holder.h1.setText(model.getHarga());
+                holder.t1.setText(model.getJudul());
+
                 //detail camera
                 holder.v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(MainActivity.this,ActivityDetailCamera.class);
-                        intent.putExtra("CamKey",getRef(position).getKey());
+                        Intent intent=new Intent(Tips.this,ActivityDetailTips.class);
+                        intent.putExtra("TipsKey",getRef(position).getKey());
                         startActivity(intent);
                     }
                 });
@@ -125,14 +108,14 @@ public class MainActivity extends AppCompatActivity {
 
             @NonNull
             @Override
-            public DataCameraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public DataTipsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.camera_item, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tips_row, parent, false);
 
-                return new DataCameraViewHolder(view);
+                return new DataTipsViewHolder(view);
             }
         };
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
         adapter.startListening();
         recyclerView.setAdapter(adapter);
@@ -159,6 +142,5 @@ public class MainActivity extends AppCompatActivity {
         if (adapter!=null)
             adapter.startListening();
     }
-
 
 }

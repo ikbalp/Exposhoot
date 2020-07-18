@@ -73,10 +73,9 @@ public class IntroActivity extends AppCompatActivity {
 
         // fill list screen
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Profile", "You will know my profile", R.drawable.img1));
-        mList.add(new ScreenItem("Daily Activity", "You want to know about my daily activities, so you have to continue, you will know from now on.", R.drawable.img2));
-        mList.add(new ScreenItem("Hobby", "My hobbies change according to what I really want, " +
-                "here you will know my current hobbies.", R.drawable.img3));
+        mList.add(new ScreenItem("Pilih tipe kamera sesuai kebutuhan", "", R.drawable.intro001));
+        mList.add(new ScreenItem("Kenali harga kamera idamanmu", "", R.drawable.intro002));
+        mList.add(new ScreenItem("Tips & trick hasil foto aesthetic", "", R.drawable.intro003));
 
         // setup viewpager
         screenPager = findViewById(R.id.screen_viewpager);

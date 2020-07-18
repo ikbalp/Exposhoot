@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityDetailCamera">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="248dp"
+                android:orientation="vertical"
+                android:background="#434141">
+            </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/gambar_detail_cam"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/judull_detail_cam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gambar_detail_cam"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tipenya"
+        android:background="#434141"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:id="@+id/hargaa_detail_cam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/judull_detail_cam"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="#434141"
+        android:textColor="@android:color/white"
+        android:text="@string/hargaa"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/spek_detail_cam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hargaa_detail_cam"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="6dp"
+        android:textColor="@android:color/black"
+        android:text="@string/deskripsi"
+        android:background="@color/white"
+        android:textSize="18sp" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
